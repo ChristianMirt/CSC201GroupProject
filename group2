@@ -1,0 +1,31 @@
+//Group 2:  Using the index returned from the search, update the number of 
+//catches for the player.  Pass in the index, the structure array, the value to update 
+//catches and the number of components in the array.  Update means add to the 
+//existing value.
+
+
+//Function updates a player's # of catches in bigGiants Array
+//Pre-condition: Structure array contains data, length contains number of rows in the array, and a proper index is given.
+//Post-condition: number of catches is changed.
+//Parameters: int index, structure array, int number to be added, int length of array
+void updateCatches(int index, footBallPlayerType bigGiants[], int update, int arrSize)
+{
+  // Check index value to ensure it is not out of bounds
+  if (index >= 0 && index < arrSize)
+    {
+        // Add new catches to existing catches
+        bigGiants[index].catches = bigGiants[index].catches + update;
+        cout << "Catches have been updated for " << bigGiants[index].name << '.' << endl << endl;
+    }
+  // Write else statement telling the user the player was not found
+  else
+    cout << "Invalid player number." << endl;
+}
+
+
+///  Function prototype
+void updateCatches(int index, footBallPlayerType bigGiants[], int update, int arrSize);
+
+
+///  Function call
+updateCatches(playerNum, bigGiants, numOfcatches, num);
